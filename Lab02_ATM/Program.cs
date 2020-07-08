@@ -2,7 +2,7 @@
 
 namespace Lab02_ATM
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
