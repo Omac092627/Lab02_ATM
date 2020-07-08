@@ -49,12 +49,14 @@ namespace Lab02_ATM
             //View Current Balance//
                 if (answer == 1)
                 {
-                    Console.WriteLine("The current balance in your account is " + amt);
+                    Console.Clear();
+                    Console.WriteLine("The current balance in your account is " + amt + "\n");
                 }
             //Withdraw Money//
                 if (answer == 2)
                 {
-                    Console.WriteLine("Enter the amount to withdraw");
+                    Console.Clear();
+                    Console.WriteLine("Enter the amount to withdraw" + "\n");
                     {
                         a = int.Parse(Console.ReadLine());
                         if (amt >= a)
@@ -62,22 +64,26 @@ namespace Lab02_ATM
                             if (a % 100 == 0)
                             {
                                 current = amt - a;
-                                Console.WriteLine("The current balance is now" + current);
+                                Console.Clear();
+                                Console.WriteLine("The current balance is now" + current + "\n");
                             }
                             else
-                                Console.WriteLine("Please enter the amount to withdraw in the multiples of 100");
+                                Console.Clear();
+                                Console.WriteLine("Please enter the amount to withdraw in the multiples of 100" + "\n");
                         }
                         else
-                            Console.WriteLine("Your account does not have sufficient balance");
+                            Console.Clear();
+                            Console.WriteLine("Your account does not have sufficient balance" + "\n");
                     }
                 }
-            //Deposite Money//
+            //Deposit Money//
                 else if (answer == 3)
                 {
+                    Console.Clear();
                     Console.WriteLine("Enter the amount to be deposit");
                     a = int.Parse(Console.ReadLine());
                     current = amt + a;
-                    Console.WriteLine("The current balance in the account is" + current);
+                    Console.WriteLine("The current balance in the account is " + current + "\n");
                 }
             //I thank you for using the ATM, now leave.//
                 else if (answer == 4)
