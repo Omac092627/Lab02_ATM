@@ -17,7 +17,7 @@ namespace XUnitTestProject1
 
 
                 // Assert
-                Assert.Equal(1, value);
+                Assert.Equal(10000, value);
             
         }
         [Fact]
@@ -31,7 +31,7 @@ namespace XUnitTestProject1
 
 
                 // Assert
-                Assert.Equal(2, value);
+                Assert.Equal(-9600, value);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace XUnitTestProject1
 
 
                     // Assert
-                    Assert.Equal(3, value);
+                    Assert.Equal(10400, value);
                 }
     }
 }
