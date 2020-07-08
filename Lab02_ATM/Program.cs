@@ -28,8 +28,6 @@ namespace Lab02_ATM
             OprahsBankAccount();
         }
 
-
-
         /// <summary>
         /// OprahsBankAccount holds the main methods needed for the ATM:
         /// While Loop: Maintains the UI and doesn't close unless the user wants it to.
@@ -38,7 +36,6 @@ namespace Lab02_ATM
 
         public static void OprahsBankAccount()
         {
-
             while (true)
             {
                 int amt = 10000, a, current;
@@ -49,7 +46,6 @@ namespace Lab02_ATM
                 Console.WriteLine("Enter your choice");
                 string result = Console.ReadLine();
                 int answer = int.Parse(result);
-
             //View Current Balance//
                 if (answer == 1)
                 {
@@ -86,7 +82,7 @@ namespace Lab02_ATM
             //I thank you for using the ATM, now leave.//
                 else if (answer == 4)
                 {
-                    Console.WriteLine("THANK YOU…");
+                    Console.WriteLine("THANK YOU, GOODBYE!");
                     break;
                 }
             }
