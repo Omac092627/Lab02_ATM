@@ -38,68 +38,149 @@ namespace Lab02_ATM
         {
             while (true)
             {
-                int amt = 10000, a, current;
 
-                Console.WriteLine("1.View Balance");
-                Console.WriteLine("2.Withdraw");
-                Console.WriteLine("3.Deposit");
-                Console.WriteLine("4. Exit");
-                Console.WriteLine("Enter your choice");
-                string result = Console.ReadLine();
-                int answer = int.Parse(result);
-            //View Current Balance//
-                if (answer == 1)
+                try
                 {
-                    Console.Clear();
-                    Console.WriteLine("The current balance in your account is " + amt.ToString("c") + "\n");
-                }
-            //Withdraw Money//
-                if (answer == 2)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Enter the amount to withdraw " + "\n");
+                    int amt = 10000;
+
+                    Console.WriteLine("1.View Balance");
+                    Console.WriteLine("2.Withdraw");
+                    Console.WriteLine("3.Deposit");
+                    Console.WriteLine("4. Exit");
+                    Console.WriteLine("Enter your choice");
+                    string result = Console.ReadLine();
+                    int answer = (int)Convert.ToDecimal(result);
+                    //View Current Balance//
+                    if (answer == 1)
                     {
-                        a = int.Parse(Console.ReadLine());
-                        if (amt >= a)
-                        {
-                            if (a % 100 == 0)
-                            {
-                                current = amt - a;
-                                Console.Clear();
-                                Console.WriteLine("The current balance is now " + current.ToString("c") + "\n");
-                            }
-                            else
-                                Console.WriteLine("Please enter the amount to withdraw in the multiples of 100 " + "\n");
-                        }
-                        else
-                            Console.WriteLine("Your account does not have sufficient balance " + "\n");
+                        Console.WriteLine("The current balance in your account is " + amt.ToString("c") + "\n");
+                    }
+                    //Withdraw Money//
+                    if (answer == 2)
+                    {
+                        Withdraw();
+                    
+                    }
+                    //Deposit Money//
+                    else if (answer == 3)
+                    {
+                        Deposit();
+                    }
+                    //I thank you for using the ATM, now leave.//
+                    else if (answer == 4)
+                    {
+                        Console.WriteLine("THANK YOU, GOODBYE!");
+                        break;
                     }
                 }
-            //Deposit Money//
-                else if (answer == 3)
+                catch (FormatException e)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Enter the amount to be deposit");
-                    a = int.Parse(Console.ReadLine());
-                    current = amt + a;
-                    Console.WriteLine("The current balance in the account is " + current.ToString("c") + "\n");
+                    Console.WriteLine(e.Message);
                 }
-            //I thank you for using the ATM, now leave.//
-                else if (answer == 4)
-                {
-                    Console.WriteLine("THANK YOU, GOODBYE!");
-                    break;
-                }
-              
+
             }
 
         }
 
+        static public decimal Withdraw()
+        {
+            while (true)
+            {
+                try
+                {
+                    int amt = 10000, a;
+
+                    //Withdraw Money//
+
+                    Console.WriteLine("Enter the amount to withdraw " + "\n");
+
+                    a = (int)Convert.ToDecimal(Console.ReadLine());
+
+                    if (a % 1 != 0)
+                    {
+                        Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
+                    }
+                    else if (a == 0)
+                    {
+                        Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
+                    }
+                    else if (a < 0)
+                    {
+                        Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
+                    }
+                    else if (a > (amt - 500))
+                    {
+                        Console.WriteLine("\n INSUFFICENT BALANCE");
+                    }
+                    else
+                    {
+                        amt = amt - a;
+                        Console.WriteLine("\n YOUR CURRENT BALANCE IS {0}", amt);
+
+                        return amt;
+                    }
+
+                }
+                catch (FormatException e)
+
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
+                return 0;
+            }
+        }
+
+        static public decimal Deposit()
+        {
+            {
+                while (true)
+                {
+                    try
+                    {
+                        int amt = 10000, a, current;
+                        Console.WriteLine("Enter the amount to be deposit");
+                        a = (int)Convert.ToDecimal(Console.ReadLine());
+
+                        if (a <= 0)
+                        {
+                            Console.WriteLine("You cannot enter a negative amount, dummy!");
+                        }
+                        else
+                        {
+                            current = amt + a;
+                            Console.WriteLine("The current balance in the account is " + current.ToString("c") + "\n");
+                            CurrentBalance(current, amt);
+                            return current;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+
+                    return 0;
+                }
+
+                 static decimal CurrentBalance(int balance, int amt)
+                {
+                    balance += amt;
+                    return 0;
+                }
+
+
+            }
+        }
 
     }
-
-
-
 }
+
+
+
+
+
+
 
 
