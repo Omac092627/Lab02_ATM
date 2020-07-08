@@ -90,6 +90,7 @@ namespace Lab02_ATM
                     Console.WriteLine("THANK YOU, GOODBYE!");
                     break;
                 }
+              
             }
 
         }
