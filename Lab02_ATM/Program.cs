@@ -6,17 +6,16 @@ namespace Lab02_ATM
     {
         /// <summary>
         /// For the first part I want to establish my intiate sequence and start the atm program.
+        /// I do that by first putting my ViewBalance above all as to be able to access it from anywhere.
+        /// OprahsBankAccount is my initiation sequence
         /// </summary>
-        /// <param name="args"></param>
-        /// 
-
 
         static public decimal ViewBalance()
         {
             int amount = 1000;
             Console.WriteLine(" YOUR BALANCE IS : {0} ", amount);
 
-            if(ViewBalance() == 1)
+            if (ViewBalance() == 1)
             {
                 ViewBalance();
             }
@@ -25,16 +24,24 @@ namespace Lab02_ATM
 
         public static void Main(string[] args)
         {
+
             OprahsBankAccount();
         }
 
-        public static void OprahsBankAccount()
-        {       
 
-            if(true)
+
+        /// <summary>
+        /// OprahsBankAccount holds the main methods needed for the ATM:
+        /// While Loop: Maintains the UI and doesn't close unless the user wants it to.
+        /// if/else statements: shows balance, calculates money withdrew, calculates money deposited, and allows you to quit.
+        /// </summary>
+
+        public static void OprahsBankAccount()
+        {
+
+            while (true)
             {
                 int amt = 10000, a, current;
-
                 Console.WriteLine("1.View Balance");
                 Console.WriteLine("2.Withdraw");
                 Console.WriteLine("3.Deposit");
@@ -43,11 +50,12 @@ namespace Lab02_ATM
                 string result = Console.ReadLine();
                 int answer = int.Parse(result);
 
+            //View Current Balance//
                 if (answer == 1)
                 {
                     Console.WriteLine("The current balance in your account is " + amt);
                 }
-
+            //Withdraw Money//
                 if (answer == 2)
                 {
                     Console.WriteLine("Enter the amount to withdraw");
@@ -67,7 +75,7 @@ namespace Lab02_ATM
                             Console.WriteLine("Your account does not have sufficient balance");
                     }
                 }
-
+            //Deposite Money//
                 else if (answer == 3)
                 {
                     Console.WriteLine("Enter the amount to be deposit");
@@ -75,19 +83,21 @@ namespace Lab02_ATM
                     current = amt + a;
                     Console.WriteLine("The current balance in the account is" + current);
                 }
-                else if(answer == 4)
+            //I thank you for using the ATM, now leave.//
+                else if (answer == 4)
                 {
                     Console.WriteLine("THANK YOU…");
+                    break;
                 }
-                }
-
             }
-
 
         }
 
 
-
     }
+
+
+
+}
 
 
