@@ -39,6 +39,7 @@ namespace Lab02_ATM
             while (true)
             {
                 int amt = 10000, a, current;
+
                 Console.WriteLine("1.View Balance");
                 Console.WriteLine("2.Withdraw");
                 Console.WriteLine("3.Deposit");
@@ -50,13 +51,13 @@ namespace Lab02_ATM
                 if (answer == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("The current balance in your account is " + amt + "\n");
+                    Console.WriteLine("The current balance in your account is " + amt.ToString("c") + "\n");
                 }
             //Withdraw Money//
                 if (answer == 2)
                 {
                     Console.Clear();
-                    Console.WriteLine("Enter the amount to withdraw" + "\n");
+                    Console.WriteLine("Enter the amount to withdraw " + "\n");
                     {
                         a = int.Parse(Console.ReadLine());
                         if (amt >= a)
@@ -65,15 +66,13 @@ namespace Lab02_ATM
                             {
                                 current = amt - a;
                                 Console.Clear();
-                                Console.WriteLine("The current balance is now" + current + "\n");
+                                Console.WriteLine("The current balance is now " + current.ToString("c") + "\n");
                             }
                             else
-                                Console.Clear();
-                                Console.WriteLine("Please enter the amount to withdraw in the multiples of 100" + "\n");
+                                Console.WriteLine("Please enter the amount to withdraw in the multiples of 100 " + "\n");
                         }
                         else
-                            Console.Clear();
-                            Console.WriteLine("Your account does not have sufficient balance" + "\n");
+                            Console.WriteLine("Your account does not have sufficient balance " + "\n");
                     }
                 }
             //Deposit Money//
@@ -83,7 +82,7 @@ namespace Lab02_ATM
                     Console.WriteLine("Enter the amount to be deposit");
                     a = int.Parse(Console.ReadLine());
                     current = amt + a;
-                    Console.WriteLine("The current balance in the account is " + current + "\n");
+                    Console.WriteLine("The current balance in the account is " + current.ToString("c") + "\n");
                 }
             //I thank you for using the ATM, now leave.//
                 else if (answer == 4)
