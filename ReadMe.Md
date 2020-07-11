@@ -46,14 +46,30 @@ ________________________________________________________________________________
 # How it works:
 
 1. Initiate my console app
+
 For the first part I want to establish my intiate sequence and start the atm program.
 I do that by first putting my ViewBalance above all as to be able to access it from anywhere.
 OprahsBankAccount is my initiation sequence.
 This starts my application.
+OprahsBankAccount holds the main methods needed for the ATM:
+While Loop: Maintains the UI and doesn't close unless the user wants it to.
+if/else statements: shows balance, calculates money withdrew, calculates money deposited, and allows you to quit.
 
 
-[Initiate Sequence One](../Lab02_ATM/images/AtmIntiate.PNG)
+![Initiate Sequence One](../Assets/images/AtmIntiate.png)
 
+
+2. Withdraw methodd
+
+Withdraw method takes the given amount and uses if/else statements to not only calculate the users withdraw amount, 
+but also, allows the user to take out money less than 10 dollars. If the user tries to withdraw more than available
+the user will be promptly declined and asked to take out an amount within their scopre of money.
+I wanted the user to be able to take out money up until 1 dollar, and ask the user to input money in 1 dollar amounts. Because
+I don't like the fact ATM's only allow you to take out 10 dollars at a time.
+The user may not withdraw a negative amount.
+
+![Withdraw 1](../Assets/images/Withdraw1.png)
+![Withdraw 2](../Assets/images/Withdraw2.png)
 
 
 

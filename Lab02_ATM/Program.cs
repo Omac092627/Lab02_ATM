@@ -79,6 +79,10 @@ namespace Lab02_ATM
 
         }
 
+        /// <summary>
+        /// Withdraw method takes the given amount and uses if/else statements to not only calculate the users withdraw amount, but also, allows the user to take out money less than 10 dollars.
+        /// </summary>
+        /// <returns></returns>
         static public decimal Withdraw()
         {
             while (true)
