@@ -15,10 +15,7 @@ namespace Lab02_ATM
             int amount = 1000;
             Console.WriteLine(" YOUR BALANCE IS : {0} ", amount);
 
-            if (ViewBalance() == 1)
-            {
-                ViewBalance();
-            }
+
             return amount;
         }
 
@@ -119,7 +116,7 @@ namespace Lab02_ATM
 
                         return amt;
                     }
-
+                    break;
                 }
                 catch (FormatException e)
 
@@ -127,8 +124,8 @@ namespace Lab02_ATM
                     Console.WriteLine(e.Message);
                     throw;
                 }
-                return 0;
             }
+                return 0;
         }
 
         static public decimal Deposit()
