@@ -52,7 +52,7 @@ OprahsBankAccount is my initiation sequence.
 This starts my application.
 
 
-[Initiate Sequence One](C:\Users\oogun\source\repos\Lab02_ATM\images\AtmIntiate.PNG)
+[Initiate Sequence One](../Lab02_ATM/images/AtmIntiate.PNG)
 
 
 
