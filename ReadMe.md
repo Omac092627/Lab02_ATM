@@ -34,7 +34,7 @@ When running your application, it should activate the user interface without any
 
 Stay within scope of the what we have learned so far in the class.
 
-If we have not officially learned the concept you are trying to implement, then don’t use it. Ask the instructor or TA if you have any questions about the scope. Unit Tests UNIT TEST Write unit tests in a new project using the XUnit library. Test the functionality for the above application. Here are the testing requirements:____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+If we have not officially learned the concept you are trying to implement, then don’t use it. Ask the instructor or TA if you have any questions about the scope. Unit Tests UNIT TEST Write unit tests in a new project using the XUnit library. Test the functionality for the above application. Here are the testing requirements:
 
 Test every method/action (that does not require user input); there should be a passing valid input, and a passing invalid input. Have at least 2 tests for every non-void method. A failing test, is not a valid test - even if the failure is expected.
 
@@ -52,7 +52,7 @@ OprahsBankAccount is my initiation sequence.
 This starts my application.
 
 
-[Initiate Sequence One](../images/AtmIntitate.PNG)
+[Initiate Sequence One](C:\Users\oogun\source\repos\Lab02_ATM\images\AtmIntiate.PNG)
 
 
 
