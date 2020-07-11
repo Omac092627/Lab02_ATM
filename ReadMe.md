@@ -56,7 +56,7 @@ While Loop: Maintains the UI and doesn't close unless the user wants it to.
 if/else statements: shows balance, calculates money withdrew, calculates money deposited, and allows you to quit.
 
 
-![Initiate Sequence One](../Assets/images/AtmIntiate.png)
+![Initiate Sequence One](Assets/images/AtmIntiate.png)
 
 
 2. Withdraw methodd
@@ -68,9 +68,9 @@ I wanted the user to be able to take out money up until 1 dollar, and ask the us
 I don't like the fact ATM's only allow you to take out 10 dollars at a time.
 The user may not withdraw a negative amount.
 
-![Withdraw 1](//Assets/images/Withdraw1.png)
+![Withdraw 1](Assets/images/Withdraw1.png)
 
-![Withdraw 2](/Assets/images/Withdraw2.png)
+![Withdraw 2](Assets/images/Withdraw2.png)
 
 
 3. Deposit method
@@ -82,7 +82,7 @@ If you attempt to deposit a negative number you are prompted to enter in multipl
 
 ![Deposit 1](Assets/images/Deposit1.png)
 
-![Deposit 2](../../Assets/images/Deposit2.png)
+![Deposit 2](Assets/images/Deposit2.png)
 
 
 
