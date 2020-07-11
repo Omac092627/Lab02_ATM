@@ -132,6 +132,12 @@ namespace Lab02_ATM
                 return 0;
         }
 
+        /// <summary>
+        /// The deposit method allows you to deposit money in order to raise your bank account.
+        /// I used a try catch to attempt to deposit the amount, if not, catch the exception.
+        /// The deposit method doesn't allow you to deposit a negative number.
+        /// </summary>
+        /// <returns></returns>
         static public decimal Deposit()
         {
             {
