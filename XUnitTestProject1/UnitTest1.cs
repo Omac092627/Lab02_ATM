@@ -6,46 +6,108 @@ namespace XUnitTestProject1
 {
     public class UnitTest1
     {
+
+        //View Balance//
         [Fact]
-        public void ViewBalance() 
+        public void WhatsMyBalance()
         {
-                //Arrange 
-                int amt = 10000;
+            //Arrange 
+            decimal amt = 100;
+            Balance = amt;
 
-                // Act
-                int value = amt;
+            // Act
+            decimal answer = ViewBalance();
 
-
-                // Assert
-                Assert.Equal(10000, value);
-            
-        }
-        [Fact]
-        public void Withdraw()
-        {
-                //Arrange 
-                int amt = 10000;
-
-                // Act
-                int value = 400 - amt;
-
-
-                // Assert
-                Assert.Equal(-9600, value);
+            // Assert
+            Assert.Equal(amt, answer);
         }
 
         [Fact]
-                public void Deposit()
-                {
-                    //Arrange 
-                    int amt = 10000;
+        public void BalanceMore()
+        {
+            decimal amt = 100;
+            Balance = amt;
 
-                    // Act
-                    int value = 400 + amt;
+            decimal answer = ViewBalance();
+
+            Assert.Equal(amt, answer);
+        }
 
 
-                    // Assert
-                    Assert.Equal(10400, value);
-                }
+
+        //Kyungrae helped me but for someone reason my computer isn't registering certain test//
+        //if you find the issue, please let me know//
+
+        //Withdraw methods//
+        [Fact]
+        public void AnotherBalance()
+        {
+            int amt = 100;
+            Balance = amt;
+            decimal withdrawl = 30;
+
+            decimal expected = 70;
+            decimal result = Withdraw(withdrawl);
+
+            Assert.Equal(expected, result);
+        }
+
+
+        [Fact]
+        public void TakeMoneyOut()
+        {
+            //Arrange 
+            decimal amt = 100;
+            Balance = amt;
+            decimal withdrawl = 30;
+
+            // Act
+            decimal expected = 30;
+            decimal result = Withdraw(withdrawl);
+
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+
+
+        //Deposit methods//
+
+        [Fact]
+        public void PutMoneyIn()
+        {
+            //Arrange 
+            int amt = 100;
+            Balance = amt;
+            decimal deposit = 200;
+
+            // Act
+            decimal expected = 300;
+            decimal answer = Deposit();
+
+            // Assert
+            Assert.Equal(expected, answer);
+        }
+
+
+
+        [Fact]
+        public void PutMoreMoneyIn()
+        {
+            int amt = 200;
+            Balance = amt;
+            decimal deposit = 300;
+
+
+
+            decimal expected = 500;
+            decimal answer = Deposit();
+
+            Assert.Equal(expected, answer);
+        }
+
+
+
     }
 }

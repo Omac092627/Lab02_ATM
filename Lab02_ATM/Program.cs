@@ -10,20 +10,20 @@ namespace Lab02_ATM
         /// OprahsBankAccount is my initiation sequence
         /// </summary>
 
-        static public decimal ViewBalance()
-        {
-            int amount = 1000;
-            Console.WriteLine(" YOUR BALANCE IS : {0} ", amount);
-
-
-            return amount;
-        }
-
+        public static decimal Balance = 10000;
         public static void Main(string[] args)
         {
 
             OprahsBankAccount();
         }
+
+
+        public static decimal ViewBalance()
+        {
+            Console.WriteLine($"Your current balance is ${Balance}");
+            return Balance;
+        }
+
 
         /// <summary>
         /// OprahsBankAccount holds the main methods needed for the ATM:
@@ -38,8 +38,6 @@ namespace Lab02_ATM
 
                 try
                 {
-                    int amt = 10000;
-
                     Console.WriteLine("1.View Balance");
                     Console.WriteLine("2.Withdraw");
                     Console.WriteLine("3.Deposit");
@@ -50,13 +48,13 @@ namespace Lab02_ATM
                     //View Current Balance//
                     if (answer == 1)
                     {
-                        Console.WriteLine("The current balance in your account is " + amt.ToString("c") + "\n");
+                        Console.WriteLine("The current balance in your account is " + Balance.ToString("c") + "\n");
                     }
                     //Withdraw Money//
                     if (answer == 2)
                     {
-                        Withdraw();
-                    
+                        Withdraw(answer);
+
                     }
                     //Deposit Money//
                     else if (answer == 3)
@@ -83,44 +81,43 @@ namespace Lab02_ATM
         /// Withdraw method takes the given amount and uses if/else statements to not only calculate the users withdraw amount, but also, allows the user to take out money less than 10 dollars.
         /// </summary>
         /// <returns></returns>
-        static public decimal Withdraw()
+        public static decimal Withdraw(decimal withdrawl)
         {
             while (true)
             {
                 try
                 {
-                    int amt = 10000, a;
 
                     //Withdraw Money//
 
                     Console.WriteLine("Enter the amount to withdraw " + "\n");
 
-                    a = (int)Convert.ToDecimal(Console.ReadLine());
+                    withdrawl = (int)Convert.ToDecimal(Console.ReadLine());
 
-                    if (a % 1 != 0)
+                    if (withdrawl % 1 != 0)
                     {
                         Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
                     }
-                    else if (a == 0)
+                    else if (withdrawl == 0)
                     {
                         Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
                     }
-                    else if (a < 0)
+                    else if (withdrawl < 0)
                     {
                         Console.WriteLine("\n PLEASE ENTER THE AMOUNT IN MULTIPLES OF 1");
                     }
-                    else if (a > (amt - 500))
+                    else if (withdrawl > (Balance - 500))
                     {
                         Console.WriteLine("\n INSUFFICENT BALANCE");
                     }
                     else
                     {
-                        amt = amt - a;
-                        Console.WriteLine("\n YOUR CURRENT BALANCE IS {0}", amt);
+                        Balance = Balance - withdrawl;
+                        Console.WriteLine("\n YOUR CURRENT BALANCE IS {0}", Balance);
 
-                        return amt;
+                        return Balance;
                     }
-                    break;
+                    return Balance;
                 }
                 catch (FormatException e)
 
@@ -129,7 +126,6 @@ namespace Lab02_ATM
                     throw;
                 }
             }
-                return 0;
         }
 
         /// <summary>
@@ -138,14 +134,14 @@ namespace Lab02_ATM
         /// The deposit method doesn't allow you to deposit a negative number.
         /// </summary>
         /// <returns></returns>
-        static public decimal Deposit()
+        public static decimal Deposit()
         {
             {
                 while (true)
                 {
                     try
                     {
-                        int amt = 10000, a, current;
+                        decimal a;
                         Console.WriteLine("Enter the amount to be deposit");
                         a = (int)Convert.ToDecimal(Console.ReadLine());
 
@@ -155,10 +151,9 @@ namespace Lab02_ATM
                         }
                         else
                         {
-                            current = amt + a;
-                            Console.WriteLine("The current balance in the account is " + current.ToString("c") + "\n");
-                            CurrentBalance(current, amt);
-                            return current;
+                            Balance = Balance + a;
+                            Console.WriteLine("The current balance in the account is " + Balance.ToString("c") + "\n");
+                            return Balance;
                         }
                     }
                     catch (Exception)
@@ -168,14 +163,9 @@ namespace Lab02_ATM
                     }
 
 
-                    return 0;
+                    return Balance;
                 }
 
-                 static decimal CurrentBalance(int balance, int amt)
-                {
-                    balance += amt;
-                    return 0;
-                }
 
 
             }
